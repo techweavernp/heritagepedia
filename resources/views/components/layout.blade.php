@@ -2,59 +2,27 @@
 <html lang="en">
 
 <head>
-    <!-- Start Meta -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="AsaanCredit – Connecting entrepreneurs with investors. Explore funding opportunities, track projects, and grow your business" />
-    <meta name="keywords" content="investor, entrepreneur, funding, projects, business" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Title of Site -->
-    <title>Asaan Credit</title>
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.ico')}}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <!-- font awesome -->
-    <link rel="stylesheet" href="{{asset('assets/css/all.css')}}">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/nice-select.css')}}">
-    <!-- Swiper -->
-    <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.min.css')}}">
-    <!-- Magnific -->
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
-    <!-- Mean menu -->
-    <link rel="stylesheet" href="{{asset('assets/css/meanmenu.min.css')}}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{asset('assets/sass/style.css')}}">
-
-    <style>
-        .header__two-top-bar {
-            background: #122F47;
-            padding: 7px 0;
-        }
-        .header__two-menu-bar-right .theme-btn3 {
-            font-size: 14px;
-            line-height: 34px;
-            padding: 0 10px;
-        }
-        .btn5 {
-            background: rgb(18, 47, 71);
-            border-radius: 3px;
-        }
-        .page__banner-content ul li {
-            color: #BA182C;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Heritage Pedia Info - Nepal's Cultural Legacy. Explore the rich heritage of Nepal.">
+    <title>Heritage Pedia Info</title>
+    <!-- Use the same fonts as index -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="{{asset('assets/css/detail-page.css')}}">
 </head>
+
 <body>
-    <x-header/>
 
-    {{$slot}}
+{{$slot}}
 
-    <x-footer/>
-
-    <x-script/>
 </body>
+
 </html>
