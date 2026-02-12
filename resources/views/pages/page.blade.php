@@ -1,7 +1,7 @@
 <x-layout>
 <!-- Header / Nav -->
 <header class="page-header">
-    <a href="index.html"><i class="fas fa-map-marker-alt"></i></a>
+    <i class="fas fa-map-marker-alt"></i>
     <div class="header-title">Kathmandu</div>
     <div class="lang-selector" id="lang-menu">
         <div class="selected-lang">
@@ -149,10 +149,10 @@
             <!-- Gallery Item 2 -->
             <div class="gallery-item"
                  data-desc="Nyatapola Temple, the tallest pagoda in Nepal, demonstrating traditional Newari architecture.">
-                <img src="photo-1582650625119-3a31f8fa2699?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                <img src="https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                      alt="Nyatapola Temple">
             </div>
-            <!-- Gallery Item 3 -->https://images.unsplash.com/
+            <!-- Gallery Item 3 -->
             <div class="gallery-item"
                  data-desc="Traditional wood carvings visible on the struts of the temples around the square.">
                 <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
