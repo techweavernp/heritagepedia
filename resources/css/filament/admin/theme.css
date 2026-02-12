@@ -1,0 +1,375 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@source '../../../../vendor/diogogpinto/filament-auth-ui-enhancer/resources/**/*.blade.php';
+
+
+@theme {
+    /* Base Colors from your Primary #122F47 (Dark Navy Blue) */
+    --color-primary-50: #e8ecf0;
+    --color-primary-100: #c5d0db;
+    --color-primary-200: #9fb3c3;
+    --color-primary-300: #7996ab;
+    --color-primary-400: #5c8099;
+    --color-primary-500: #122F47;
+    /* Your primary color */
+    --color-primary-600: #102a40;
+    --color-primary-700: #0d2337;
+    --color-primary-800: #0a1d2f;
+    --color-primary-900: #071220;
+
+    /* Main Theme Variables for Filament */
+    --color-main-primary: #122F47;
+    --color-main-secondary: #1e40af;
+    /* Complementary blue */
+    --color-main-accent: #dc2626;
+    /* Accent for CTAs (Red) */
+    --color-main-success: #059669;
+    /* Green */
+    --color-main-warning: #d97706;
+    /* Amber */
+    --color-main-danger: #dc2626;
+    /* Red */
+    --color-main-info: #0284c7;
+    /* Sky blue */
+
+    /* Neutral Colors */
+    --color-main-black: #111827;
+    --color-main-white: #ffffff;
+    --color-main-gray-50: #f9fafb;
+    --color-main-gray-100: #f3f4f6;
+    --color-main-gray-200: #e5e7eb;
+    --color-main-gray-300: #d1d5db;
+    --color-main-gray-400: #9ca3af;
+    --color-main-gray-500: #6b7280;
+    --color-main-gray-600: #4b5563;
+    --color-main-gray-700: #374151;
+    --color-main-gray-800: #1f2937;
+    --color-main-gray-900: #111827;
+}
+
+/* ================ TOPBAR / HEADER ================ */
+.fi-topbar {
+    @apply border-b border-gray-200 dark:border-gray-800;
+    background: linear-gradient(135deg, #122F47 0%, #0a1d2f 100%);
+
+    /* Dark mode topbar */
+    .dark & {
+        background: linear-gradient(135deg, #0d2337 0%, #071220 100%);
+    }
+
+    /* Topbar items */
+    .fi-topbar-item {
+        @apply text-gray-100 hover:text-white transition-colors;
+
+        .fi-topbar-item-label,
+        .fi-topbar-item-icon {
+            @apply text-gray-100 hover:text-white;
+        }
+
+        &:hover {
+            @apply bg-white/10;
+        }
+    }
+
+    /* Search input */
+    .fi-search-field {
+        input {
+            @apply bg-white/10 border-white/20 text-white placeholder-gray-300;
+
+            &:focus {
+                @apply ring-2 ring-white/30 border-white/40;
+            }
+        }
+
+        .fi-icon-btn {
+            @apply text-gray-300 hover:text-white;
+        }
+    }
+}
+
+main.fi-main {
+    @apply px-3;
+}
+
+body.fi-body {
+    @apply bg-main-gray-200 text-main-black dark:bg-gray-800 dark:text-gray-200;
+}
+
+
+/* topbar */
+
+
+
+/* sidebar */
+
+aside.fi-sidebar {
+    @apply bg-gradient-to-b from-primary-700 to-primary-800 dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-900;
+
+
+    & .fi-sidebar-nav-groups {
+        @apply gap-y-3;
+    }
+
+    & .fi-sidebar-nav {
+        @apply px-4 pt-4;
+
+        & .fi-sidebar-item>.fi-sidebar-item-btn {
+            @apply rounded-2xl;
+        }
+
+        & li.fi-sidebar-item {
+
+            & .fi-sidebar-item-label,
+            .fi-sidebar-item-icon {
+                @apply text-gray-200 dark:text-gray-200;
+            }
+        }
+
+        & li.fi-sidebar-item.fi-active,
+        li.fi-sidebar-item:hover {
+
+            & .fi-sidebar-item-label,
+            .fi-sidebar-item-icon {
+                @apply text-blue-800 dark:text-blue-500;
+            }
+        }
+    }
+}
+
+.fi-btn,
+.fi-btn-group,
+.fi-input-wrp {
+    @apply rounded-2xl;
+}
+
+/* table.fi-ta-table {
+
+    & thead tr th.fi-ta-header-cell {
+        @apply py-3;
+
+        &>div {
+            @apply py-3;
+        }
+    }
+
+    & tbody tr td.fi-ta-cell {
+
+        &>div {
+            @apply py-[0.01rem];
+        }
+
+        & div {
+            @apply py-[0.01rem];
+        }
+
+        & button {
+            @apply py-[0.01rem];
+        }
+    }
+} */
+
+
+/* ================ SUB-NAVIGATION SIDEBAR ================ */
+.fi-page-sub-navigation-sidebar-ctn {
+    @apply border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900;
+}
+
+.fi-page-sub-navigation-sidebar {
+    @apply py-4;
+}
+
+/* Sub-navigation sidebar groups */
+.fi-page-sub-navigation-sidebar .fi-sidebar-group {
+    @apply mb-2 last:mb-0;
+
+    /* Group header (if you have collapsible groups) */
+    .fi-sidebar-group-header {
+        @apply px-4 py-2 mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400;
+    }
+}
+
+/* Sub-navigation sidebar items */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item {
+    @apply mx-2;
+
+    /* Item button/link */
+    .fi-sidebar-item-btn {
+        @apply rounded-2xl flex items-center gap-3 px-3 py-2.5 transition-all duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800;
+
+        /* Active state */
+        .fi-sidebar-item.fi-active & {
+            @apply bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-semibold;
+
+            /* Active indicator line */
+            &::before {
+                content: '';
+                @apply absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 rounded-r bg-primary-500;
+            }
+        }
+
+        /* Hover state for non-active items */
+        &:not(.fi-sidebar-item.fi-active &):hover {
+            @apply translate-x-1;
+        }
+    }
+
+    /* Icon in sub-navigation */
+    .fi-sidebar-item-icon {
+        @apply w-5 h-5 text-gray-500 dark:text-gray-400 transition-colors duration-200;
+
+        .fi-sidebar-item.fi-active & {
+            @apply text-primary-600 dark:text-primary-400;
+        }
+    }
+
+    /* Label in sub-navigation */
+    .fi-sidebar-item-label {
+        @apply text-sm font-medium transition-colors duration-200;
+
+        .fi-sidebar-item.fi-active & {
+            @apply text-primary-700 dark:text-primary-300;
+        }
+    }
+
+    /* Badge/count in sub-navigation */
+    .fi-sidebar-item-badge {
+        @apply ml-auto text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400;
+
+        .fi-sidebar-item.fi-active & {
+            @apply bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400;
+        }
+    }
+}
+
+/* Sub-navigation item states */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item {
+
+    /* Active item - highlighted */
+    &.fi-active {
+        .fi-sidebar-item-btn {
+            @apply shadow-sm;
+        }
+    }
+
+    /* Items with children */
+    &.fi-sidebar-item-has-children {
+        .fi-sidebar-item-btn {
+            @apply pr-2;
+        }
+
+        .fi-sidebar-item-collapse-button {
+            @apply ml-auto;
+        }
+    }
+}
+
+/* Nested items (if you have dropdowns) */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item-children {
+    @apply ml-8 mt-1 space-y-1;
+
+    .fi-sidebar-item {
+        @apply mx-0;
+
+        .fi-sidebar-item-btn {
+            @apply py-2 text-sm;
+        }
+    }
+}
+
+/* ================ DARK MODE ================ */
+.dark {
+    .fi-page-sub-navigation-sidebar-ctn {
+        @apply bg-gray-700 border-gray-700;
+
+    }
+
+    .fi-page-sub-navigation-sidebar .fi-sidebar-item {
+        .fi-sidebar-item-btn {
+            &:hover {
+                @apply bg-gray-800/70;
+            }
+        }
+
+        &.fi-active {
+            .fi-sidebar-item-btn {
+                @apply bg-primary-900/20;
+
+                &::before {
+                    @apply bg-primary-400;
+                }
+            }
+        }
+    }
+}
+
+/* ================ RESPONSIVE ================ */
+@media (max-width: 1024px) {
+    .fi-page-sub-navigation-sidebar-ctn {
+        @apply border-r-0 border-b border-gray-200 dark:border-gray-800;
+    }
+
+    .fi-page-sub-navigation-sidebar {
+        @apply py-2;
+
+        .fi-sidebar-item {
+            @apply mx-1;
+
+            .fi-sidebar-item-btn {
+                @apply px-2 py-2;
+            }
+        }
+    }
+}
+
+/* ================ ANIMATIONS ================ */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item-btn {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth active state transition */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item.fi-active {
+    animation: subNavActivePulse 0.3s ease-out;
+}
+
+@keyframes subNavActivePulse {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: rgba(18, 47, 71, 0.1);
+    }
+
+    100% {
+        background-color: rgba(18, 47, 71, 0.05);
+    }
+}
+
+/* ================ ICON SPECIFIC STYLING ================ */
+/* Business Stages icon */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item:nth-child(1) .fi-sidebar-item-icon {
+    @apply text-blue-500;
+}
+
+/* Industry Sectors icon */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item:nth-child(2) .fi-sidebar-item-icon {
+    @apply text-green-500;
+}
+
+/* Entrepreneur Types icon */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item:nth-child(3) .fi-sidebar-item-icon {
+    @apply text-purple-500;
+}
+
+/* Funding Types icon */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item:nth-child(4) .fi-sidebar-item-icon {
+    @apply text-yellow-500;
+}
+
+/* Investment Ranges icon */
+.fi-page-sub-navigation-sidebar .fi-sidebar-item:nth-child(5) .fi-sidebar-item-icon {
+    @apply text-red-500;
+}
