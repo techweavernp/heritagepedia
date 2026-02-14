@@ -26,11 +26,10 @@
 
         <p class="subtitle">NEPAL'S CULTURAL LEGACY</p>
     </div>
-
-    <footer class="footer">
-        <p>DEVELOPED BY <span class="techweaver"><a href="https://www.techweaver.com.np" target="_blank" style="color:#fff; text-decoration: none">TECHWEAVER</a></span></p>
-    </footer>
 </div>
+<footer class="footer">
+    <p>DEVELOPED BY <span class="techweaver"><a href="https://www.techweaver.com.np" target="_blank" style="color:#fff; text-decoration: none">TECHWEAVER</a></span></p>
+</footer>
 
 <script src="{{asset('assets/js/script.js')}}"></script>
 </body>
