@@ -209,7 +209,7 @@ html {
 
     .footer {
         position: fixed;
-        bottom: 10px;
+        bottom: 50px;
         font-size: 0.65rem;
         letter-spacing: 1.5px;
         padding: 0 15px;
@@ -234,7 +234,7 @@ html {
 
     .footer {
         position: fixed;
-        bottom: 8px;
+        bottom: 50px;
         font-size: 0.6rem;
         letter-spacing: 1px;
         padding: 0 10px;
