@@ -18,6 +18,8 @@ html {
     position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,6 +176,7 @@ html {
     font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .footer .techweaver {
@@ -183,6 +186,18 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
+    body,
+    html {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        height: auto;
+        padding-bottom: 80px;
+    }
     .main-title {
         font-size: 3rem;
     }
@@ -193,15 +208,20 @@ html {
     }
 
     .footer {
-        bottom: 50px;
+        position: fixed;
+        bottom: 10px;
         font-size: 0.65rem;
         letter-spacing: 1.5px;
         padding: 0 15px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
     }
 }
 
 /* Extra small devices */
 @media (max-width: 480px) {
+    .hero-section {
+        padding-bottom: 70px;
+    }
     .main-title {
         font-size: 2.5rem;
         letter-spacing: 3px;
@@ -213,9 +233,11 @@ html {
     }
 
     .footer {
-        bottom: 50px;
+        position: fixed;
+        bottom: 8px;
         font-size: 0.6rem;
         letter-spacing: 1px;
         padding: 0 10px;
+        padding-bottom: max(8px, env(safe-area-inset-bottom));
     }
 }
