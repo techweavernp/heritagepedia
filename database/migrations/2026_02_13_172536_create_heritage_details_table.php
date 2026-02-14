@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('audio');
-            $table->json('qlink_tags');
+            $table->string('qlink_tag');
             $table->timestamps();
         });
     }
