@@ -166,7 +166,7 @@ html {
 /* Footer Section */
 .footer {
     position: absolute;
-    top: 30px;
+    bottom: 30px;
     width: 100%;
     text-align: center;
     z-index: 2;
@@ -189,5 +189,33 @@ html {
 
     .subtitle {
         font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+
+    .footer {
+        bottom: 20px;
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        padding: 0 15px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    .subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .footer {
+        bottom: 15px;
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+        padding: 0 10px;
     }
 }
