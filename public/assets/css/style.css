@@ -168,7 +168,7 @@ html {
 /* Footer Section */
 .footer {
     position: absolute;
-    bottom: 100px;
+    top: 100px;
     width: 100%;
     text-align: center;
     z-index: 2;
