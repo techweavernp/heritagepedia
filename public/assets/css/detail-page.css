@@ -485,11 +485,9 @@ a {
     font-size: 0.7rem;
     cursor: pointer;
     padding: 0;
-    width: 60px;
-    /* Fixed touch target */
-    height: 60px;
+    width: 70px;
+    height: 65px;
     border-radius: 50%;
-    /* Circular touch effect */
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
     overflow: hidden;

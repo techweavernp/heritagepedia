@@ -18,9 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->char('role', 1)->default('E')->comment('S-super, A-admin, I-investor, E-entrepreneur');
             $table->tinyInteger('status')->default(1)->comment('0-blocked, 1-active');
-            $table->string('blocked_reason')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

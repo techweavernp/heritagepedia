@@ -33,7 +33,7 @@ html {
     width: 100%;
     height: 100%;
     /* Using a high quality Stupa image from Unsplash */
-    background-image: url('/assets/img/heritage_stupa_background_1770892064769.png');
+    background-image: url('../img/heritage_stupa_background_1770892064769.png');
     background-size: cover;
     background-position: center bottom;
     z-index: 0;

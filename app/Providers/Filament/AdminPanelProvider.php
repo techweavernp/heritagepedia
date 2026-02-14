@@ -90,10 +90,10 @@ class AdminPanelProvider extends PanelProvider
             //     'panels::auth.login.form.after',
             //     fn () => view('auth.socialite')
             // )
-            ->renderHook(
-                PanelsRenderHook::TOPBAR_LOGO_AFTER,
-                fn (): View => view('filament.app.hooks.welcome_user')
-            )
+//            ->renderHook(
+//                PanelsRenderHook::TOPBAR_LOGO_AFTER,
+//                fn (): View => view('filament.app.hooks.welcome_user')
+//            )
             ->renderHook(
                 PanelsRenderHook::PAGE_HEADER_WIDGETS_BEFORE,
                 fn (): View => view('filament.alert')
@@ -106,13 +106,13 @@ class AdminPanelProvider extends PanelProvider
     protected function getBrandColors(): array
     {
         return [
-            'primary' => Color::hex('#122F47'),
-            'secondary' => Color::hex('#1e40af'),
-            'danger' => Color::hex('#dc2626'),
-            'success' => Color::hex('#059669'),
-            'warning' => Color::hex('#d97706'),
+            'primary' => Color::hex('#5B2727'),
+            'secondary' => Color::hex('#003893'),
+            'danger' => Color::hex('#DC143C'),
+            'success' => Color::hex('#31473A'),
+            'warning' => Color::hex('#EEA429'),
             'info' => Color::hex('#0284c7'),
-            'gray' => Color::Zinc,
+            'gray' => Color::hex('#66625C'),
         ];
     }
 }

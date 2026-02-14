@@ -2,27 +2,20 @@
 <!-- Header / Nav -->
 <header class="page-header">
     <i class="fas fa-map-marker-alt"></i>
-    <div class="header-title">Kathmandu</div>
+    <div class="header-title">{{$heritage->site->city->district->name}}</div>
     <div class="lang-selector" id="lang-menu">
         <div class="selected-lang">
-            <span class="fas fa-language"></span> <span class="current-text">English</span> <i
+            <span class="fas fa-language"></span> <span class="current-text">{{ $heritage->lang->name ?? 'English' }}</span> <i
                 class="fas fa-chevron-down"></i>
         </div>
         <div class="lang-dropdown">
-            <div class="lang-option" data-lang="English" data-url="https://heritagepedia.info/ktm-23-kumari-che">
-                <span class="fi fi-us"></span> English
-            </div>
-            <div class="lang-option" data-lang="नेपाली" data-url="https://heritagepedia.info/ktm-23-kumari-che-np">
-                <span class="fi fi-np"></span> नेपाली
-            </div>
-            <div class="lang-option" data-lang="हिन्दी" data-url="https://heritagepedia.info/ktm-23-kumari-che-hn">
-                <span class="fi fi-in"></span> हिन्दी
-            </div>
-            <div class="lang-option" data-lang="中文" data-url="https://heritagepedia.info/ktm-23-kumari-che-cn"><span
-                    class="fi fi-cn"></span> 中文</div>
-            <div class="lang-option" data-lang="日本語" data-url="https://heritagepedia.info/ktm-23-kumari-che-jp">
-                <span class="fi fi-jp"></span> 日本語
-            </div>
+            @foreach($languages as $lang)
+                <div class="lang-option"
+                     data-lang="{{ $lang['name'] }}"
+                     data-url="https://heritagepedia.test/page/{{ substr($heritage->url_code, 0, -2).$lang['code']  }}">
+                    <span class="fi fi-{{ strtolower($lang['code']) }}"></span> {{ $lang['name'] }}
+                </div>
+            @endforeach
         </div>
     </div>
 </header>
@@ -31,14 +24,13 @@
 <section class="hero-section">
     <div class="hero-bg">
         <!-- Placeholder for the main detailed image -->
-        <img src="https://heritagepedia.info/wp-content/uploads/2024/03/Kumari-Che-New-Borderless.jpg"
-             alt="Heritage Pedia Info">
+        <img src="{{ asset('storage/' . $heritage->feature_image) }}" alt="Heritage Pedia Info">
         <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-        <h1 class="hero-title">Bhaktapur Durbar Square</h1>
+        <h1 class="hero-title">{{$heritage->name}}</h1>
         <div class="location">
-            <i class="fas fa-map-marker-alt"></i> Bhaktapur, Nepal
+            <i class="fas fa-map-marker-alt"></i> {{$heritage->location}}
         </div>
     </div>
 </section>
@@ -47,10 +39,11 @@
 <main class="content-container">
 
     <!-- Introduction Section -->
-    <section id="introduction" class="content-section">
+    @foreach($heritage->heritage_details as $detail)
+    <section id="{{$detail->qlink_tag}}" class="content-section">
         <div class="section-header">
             <div class="red-bar"></div>
-            <h2>Introduction</h2>
+            <h2>{{$detail->title}}</h2>
         </div>
 
         <!-- Audio Player Component -->
@@ -63,80 +56,32 @@
             </div>
             <span class="audio-time">0:00 / 0:00</span>
             <audio id="audio-intro" preload="metadata">
-                <source src="{{asset('assets/audio/RS-jiwani-01.mp3')}}" type="audio/mpeg">
+                <source src="{{asset('storage/' . $detail->audio)}}" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
 
-        <p class="text-content">
-            Known as the <strong>'City of Devotees'</strong>, Bhaktapur Durbar Square is a museum of medieval art
-            and architecture
-            with many examples of sculpture, woodcarving, and colossal pagoda temples consecrated to different gods
-            and goddesses.
-        </p>
-        <p class="text-content">
-            It is located 12 km east of Kathmandu and consists of four distinct squares: Durbar Square, Taumadhi
-            Square, Dattatreya Square, and Pottery Square.
-        </p>
+        <p class="text-content">{!! $detail->description !!}</p>
     </section>
-
-    <!-- History Section -->
-    <section id="history" class="content-section">
-        <div class="section-header">
-            <div class="red-bar"></div>
-            <h2>History</h2>
-        </div>
-
-        <!-- Audio Player Component (History) -->
-        <div class="audio-player" data-audio-id="audio-history">
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <div class="audio-info">
-                <div class="progress-bar">
-                    <div class="progress" style="width: 0%;"></div>
-                </div>
-            </div>
-            <span class="audio-time">0:00 / 0:00</span>
-            <audio id="audio-history" preload="metadata">
-                <source src="{{asset('assets/audio/RS-jiwani-01.mp3')}}" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-        <p class="text-content">
-            The history of the square is deeply intertwined with the Malla Dynasty, particularly the reign of King
-            Yaksha Malla in the 15th century. It served as the royal palace complex for the Bhaktapur Kingdom.
-        </p>
-
-        <!-- Timeline -->
-        <div class="timeline-table">
-            <div class="timeline-header">
-                <span>ERA / YEAR</span>
-                <span>HISTORICAL EVENT</span>
-            </div>
-            <div class="timeline-row">
-                <div class="time-col">12th Century</div>
-                <div class="event-col">Initial construction by King Ananda Deva.</div>
-            </div>
-            <div class="timeline-row">
-                <div class="time-col">1427 AD</div>
-                <div class="event-col">Palace of Fifty-five Windows commissioned.</div>
-            </div>
-            <div class="timeline-row">
-                <div class="time-col">1934 AD</div>
-                <div class="event-col">Significant damage due to the Great Earthquake.</div>
-            </div>
-            <div class="timeline-row">
-                <div class="time-col">1979 AD</div>
-                <div class="event-col">Inscribed as a UNESCO World Heritage Site.</div>
-            </div>
-        </div>
-    </section>
+    @endforeach
 
     <!-- Gallery Section -->
     <section id="gallery" class="content-section">
         <div class="section-header">
             <div class="red-bar"></div>
-            <h2>Gallery</h2>
+            <h2>@switch($heritage->lang->code)
+                    @case('np')
+                        फोटो
+                        @break
+                    @case('en')
+                        Gallery
+                        @break
+                    @case('in')
+                        गैलरी
+                        @break
+                    @default
+                        Gallery
+                @endswitch</h2>
         </div>
 
         <div class="gallery-grid">
@@ -178,11 +123,11 @@
             <div class="source-item">
                 <div class="source-info">
                     <span class="source-role">Researcher</span>
-                    <span class="source-name">Junu Maiya Basukala</span>
-                    <span class="source-detail">Ph.D. in Buddhist Studies</span>
+                    <span class="source-name">{{$heritage->source['researcher']}}</span>
+                    <span class="source-detail">{{$heritage->source['title']}}</span>
                     <br>
                     <span class="source-role">Photographer</span>
-                    <span class="source-name">Rameshwor Maharjan</span>
+                    <span class="source-name">{{$heritage->source['photographer']}}</span>
                 </div>
             </div>
         </div>
@@ -309,9 +254,10 @@
             <span class="close-sheet">&times;</span>
         </div>
         <ul class="quick-links-list">
-            <li><a href="#introduction" class="quick-link-item">Introduction</a></li>
-            <li><a href="#history" class="quick-link-item">History</a></li>
-            <li><a href="#gallery" class="quick-link-item">Gallery</a></li>
+            @foreach($heritage->heritage_details as $detail)
+                <li><a href="#{{$detail->title}}" class="quick-link-item">{{$detail->title}}</a></li>
+            @endforeach
+
         </ul>
     </div>
 </div>

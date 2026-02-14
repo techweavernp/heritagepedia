@@ -14,12 +14,8 @@ class UserInfolist
                 TextEntry::make('name'),
                 TextEntry::make('email')
                     ->label('Email address'),
-                TextEntry::make('role')
-                    ->badge(),
                 TextEntry::make('status')
                     ->badge(),
-                TextEntry::make('blocked_reason')
-                    ->placeholder('-'),
                 TextEntry::make('created_at')
                     ->dateTime()
                     ->placeholder('-'),

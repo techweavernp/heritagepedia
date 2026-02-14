@@ -28,13 +28,7 @@ class UserForm
                             ->required(),
                         PasswordField::make('password', 'password', false)
                             ->hiddenOn('edit'),
-                        ToggleButtons::make('role')
-                            ->required()
-                            ->inline()
-                            ->grouped()
-                            ->options(RoleEnum::class)
-                            ->default(RoleEnum::ENTREPRENEUR)
-                            ->columnSpan(2),
+
                         ToggleButtons::make('status')
                             ->required()
                             ->inline()
@@ -42,11 +36,7 @@ class UserForm
                             ->options(UserStatusEnum::class)
                             ->default(UserStatusEnum::PENDING)
                             ->live(),
-                        TextInput::make('blocked_reason')
-                            ->placeholder('Enter reason for blocking this user...')
-                            ->visible(fn (Get $get) => $get('status') === UserStatusEnum::BLOCKED)
-                            ->required(fn (Get $get) => $get('status') === UserStatusEnum::BLOCKED)
-                            ->columnSpanFull(),
+
                     ])->columns(3),
             ]);
     }

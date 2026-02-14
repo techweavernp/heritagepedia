@@ -21,17 +21,7 @@ class StatsOverview extends StatsOverviewWidget
                 ->color('warning')
                 ->chart([7, 2, 10, 3, 15, 4, 10]),
 
-            Stat::make('Investors', Investor::count())
-                ->description('Total Investors')
-                ->icon('heroicon-o-user-group')
-                ->color('success')
-                ->chart([7, 2, 10, 3, 15, 4, 10]),
 
-            Stat::make('Entrepreneurs', Entrepreneur::count())
-                ->description('Total Entrepreneurs')
-                ->icon('heroicon-o-user-group')
-                ->color('success')
-                ->chart([7, 2, 10, 3, 15, 4, 10]),
         ];
     }
 }

@@ -48,11 +48,6 @@ class UserResource extends Resource
         ];
     }
 
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()->where('role', '!=', RoleEnum::SUPER);
-    }
-
     public static function getPages(): array
     {
         return [
@@ -61,10 +56,5 @@ class UserResource extends Resource
             'view' => ViewUser::route('/{record}'),
             'edit' => EditUser::route('/{record}/edit'),
         ];
-    }
-
-    public static function canAccess(): bool
-    {
-        return auth()->user()->role == RoleEnum::SUPER;
     }
 }
