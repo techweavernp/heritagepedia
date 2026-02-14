@@ -24,7 +24,6 @@ class HeritagesTable
                 TextColumn::make('lang.name')
                     ->label('Language')
                     ->sortable(),
-
                 ImageColumn::make('feature_image'),
                 TextColumn::make('location')
                     ->searchable(),

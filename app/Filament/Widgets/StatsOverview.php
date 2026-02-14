@@ -20,7 +20,7 @@ class StatsOverview extends StatsOverviewWidget
                 ->description('Heritage Sites')
                 ->icon('heroicon-o-map')
                 ->color('success')
-                ->chart([7, 2, 10, 3, 15, 4, 10]),
+                ->chart([1,1,1,1]),
 
 
         ];
