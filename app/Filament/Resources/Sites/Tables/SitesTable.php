@@ -15,26 +15,15 @@ class SitesTable
     {
         return $table
             ->columns([
+                TextColumn::make('id'),
+                ImageColumn::make('image'),
                 TextColumn::make('name')
                     ->searchable(),
-                ImageColumn::make('image'),
-                TextColumn::make('city.name')
-                    ->searchable(),
-                TextColumn::make('ward')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('street')
-                    ->searchable(),
+                TextColumn::make('location')
+                    ->searchable()
+                    ->wrap(),
                 TextColumn::make('notes')
-                    ->searchable(),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->wrap(),
             ])
             ->filters([
                 //
@@ -42,10 +31,6 @@ class SitesTable
             ->recordActions([
                 EditAction::make(),
             ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);
+            ;
     }
 }

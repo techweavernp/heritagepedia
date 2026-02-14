@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Sites\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Group;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -17,21 +18,28 @@ class SiteForm
                 Section::make()
                 ->columnSpanFull()
                 ->schema([
+                    Select::make('category_id')
+                        ->relationship('category', 'name')
+                        ->required(),
                     TextInput::make('name')
                         ->required(),
-                    Select::make('city_id')
-                        ->relationship('city', 'name')
-                        ->required(),
-                    TextInput::make('ward')
-                        ->numeric(),
-                    TextInput::make('street'),
+                    Group::make()
+                        ->columnSpanFull()
+                        ->schema([
+                            Select::make('city_id')
+                                ->relationship('city', 'name')
+                                ->required(),
+                            TextInput::make('ward')
+                                ->numeric(),
+                            TextInput::make('street'),
+                        ])->columns(3),
                     FileUpload::make('image')
                         ->directory('site')
                         ->image()
-                        ->columnSpan(2),
+                        ->columnSpanFull(),
                     TextInput::make('notes')
-                        ->columnSpan(2),
-                ])->columns(4)
+                        ->columnSpanFull(),
+                ])->columns(2)
 
             ]);
     }

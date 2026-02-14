@@ -5,6 +5,7 @@ namespace App\Filament\Widgets;
 use App\Enums\UserStatusEnum;
 use App\Models\Entrepreneur;
 use App\Models\Investor;
+use App\Models\Site;
 use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
@@ -15,10 +16,10 @@ class StatsOverview extends StatsOverviewWidget
     {
         return [
 
-            Stat::make('Pending', User::whereStatus(UserStatusEnum::PENDING->value)->count())
-                ->description('Pending users')
-                ->icon('heroicon-o-user-group')
-                ->color('warning')
+            Stat::make('Sites', Site::count())
+                ->description('Heritage Sites')
+                ->icon('heroicon-o-map')
+                ->color('success')
                 ->chart([7, 2, 10, 3, 15, 4, 10]),
 
 
