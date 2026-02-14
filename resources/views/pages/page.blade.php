@@ -12,7 +12,7 @@
             @foreach($languages as $lang)
                 <div class="lang-option"
                      data-lang="{{ $lang['name'] }}"
-                     data-url="https://heritagepedia.test/page/{{ substr($heritage->url_code, 0, -2).$lang['code']  }}">
+                     data-url="{{ config('app.url') }}/page/{{ substr($heritage->url_code, 0, -2) }}{{ $lang['code'] }}">
                     <span class="fi fi-{{ strtolower($lang['code']) }}"></span> {{ $lang['name'] }}
                 </div>
             @endforeach
@@ -122,11 +122,11 @@
         <div class="sources-grid">
             <div class="source-item">
                 <div class="source-info">
-                    <span class="source-role">Researcher</span>
+                    <span class="source-role">Researcher -</span>
                     <span class="source-name">{{$heritage->source['researcher']}}</span>
                     <span class="source-detail">{{$heritage->source['title']}}</span>
                     <br>
-                    <span class="source-role">Photographer</span>
+                    <span class="source-role">Photographer -</span>
                     <span class="source-name">{{$heritage->source['photographer']}}</span>
                 </div>
             </div>
