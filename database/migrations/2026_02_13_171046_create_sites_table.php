@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('city_id');
             $table->integer('ward')->nullable();
             $table->string('street')->nullable();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->string('notes')->nullable();
             $table->timestamps();
         });
