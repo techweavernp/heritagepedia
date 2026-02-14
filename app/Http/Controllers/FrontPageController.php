@@ -22,6 +22,10 @@ class FrontPageController extends Controller
 
     public function page(string $url_code)
     {
+        if (in_array($url_code, ['ktm-23-kumari-che', 'ktm-23-kumari-che-np'])) {
+            return redirect(to: '/page/ktm23kumarius');
+        }
+
         $languages = Heritage::getLanguagesBySite($url_code);
 
         $heritage = Heritage::with(['heritage_details', 'lang', 'galleries'])
