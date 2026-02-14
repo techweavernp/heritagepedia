@@ -255,7 +255,7 @@
         </div>
         <ul class="quick-links-list">
             @foreach($heritage->heritage_details as $detail)
-                <li><a href="#{{$detail->title}}" class="quick-link-item">{{$detail->title}}</a></li>
+                <li><a href="#{{$detail->qlink_tag}}" class="quick-link-item">{{$detail->qlink_tag}}</a></li>
             @endforeach
 
         </ul>
