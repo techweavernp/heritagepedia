@@ -11,8 +11,8 @@ class FrontPageController extends Controller
 
     public function index(string $url_code)
     {
-        if (in_array($url_code, ['ktm-23-kumari-che', 'ktm-23-kumari-che-np'])) {
-            return redirect(to: '/page/ktm23kumarinp');
+        if ($redirect = $this->handleLegacyRedirect($url_code)) {
+            return $redirect;
         }
         return "hello";
     }
@@ -23,8 +23,8 @@ class FrontPageController extends Controller
 
     public function page(string $url_code)
     {
-        if (in_array($url_code, ['ktm-23-kumari-che', 'ktm-23-kumari-che-np'])) {
-            return redirect(to: '/page/ktm23kumarius');
+        if ($redirect = $this->handleLegacyRedirect($url_code)) {
+            return $redirect;
         }
 
         $languages = Heritage::getLanguagesBySite($url_code);
@@ -36,5 +36,15 @@ class FrontPageController extends Controller
 
         return view('pages.page', compact(['heritage', 'languages', 'galleries']));
     }
-}
 
+    private function handleLegacyRedirect(string $code)
+    {
+        $redirects = config('heritage_redirects', []);
+
+        if (isset($redirects[$code])) {
+            return redirect()->to('/page/' . $redirects[$code], 301);
+        }
+
+        return null;
+    }
+}
