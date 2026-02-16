@@ -31,7 +31,8 @@ class GalleriesRelationManager extends RelationManager
                     ->columnSpanFull()
                     ->schema([
                         FileUpload::make('image')
-                            ->required(),
+                            ->required()
+                            ->directory(fn (HeritageDetailsRelationManager $livewire) => 'heritage/' . $livewire->getOwnerRecord()->site_id),
                         TextInput::make('caption')
                             ->required(),
                     ])->columns(1)

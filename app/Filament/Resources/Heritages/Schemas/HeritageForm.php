@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Heritages\Schemas;
 
+use App\Filament\Resources\Heritages\RelationManagers\HeritageDetailsRelationManager;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
@@ -31,7 +32,7 @@ class HeritageForm
                         TextInput::make('location')
                             ->required(),
                         FileUpload::make('feature_image')
-                            ->directory('heritage')
+                            ->directory(fn (HeritageDetailsRelationManager $livewire) => 'heritage/' . $livewire->getOwnerRecord()->site_id)
                             ->image()
                             ->required()
                             ->columnSpan(2),
