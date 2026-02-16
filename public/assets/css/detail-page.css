@@ -925,3 +925,7 @@ a {
     font-style: italic;
     font-family: var(--font-body), serif;
 }
+
+ol{
+    padding-inline-start: 12px
+}
