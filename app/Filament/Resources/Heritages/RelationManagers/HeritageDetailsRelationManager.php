@@ -40,7 +40,7 @@ class HeritageDetailsRelationManager extends RelationManager
                             ->required()
                             ->columnSpanFull(),
                         FileUpload::make('audio')
-                            ->directory('audio'),
+                            ->directory(fn (HeritageDetailsRelationManager $livewire) => 'audio/' . $livewire->getOwnerRecord()->site_id),
                     ])->columns(2)
             ]);
     }
