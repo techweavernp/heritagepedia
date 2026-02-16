@@ -47,7 +47,7 @@
         </div>
 
         <!-- Audio Player Component -->
-        <div class="audio-player" data-audio-id="audio-intro">
+        <div class="audio-player" data-audio-id="{{'audio-'.$detail->id}}">
             <button class="play-btn"><i class="fas fa-play"></i></button>
             <div class="audio-info">
                 <div class="progress-bar">
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <span class="audio-time">0:00 / 0:00</span>
-            <audio id="audio-intro" preload="metadata">
+            <audio id="{{'audio-'.$detail->id}}" preload="metadata">
                 <source src="{{asset('storage/' . $detail->audio)}}" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
