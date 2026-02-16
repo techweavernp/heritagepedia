@@ -38,7 +38,7 @@
 <!-- Main Content -->
 <main class="content-container">
 
-    <!-- Introduction Section -->
+    <!-- Main Section -->
     @foreach($heritage->heritage_details as $detail)
     <section id="{{$detail->qlink_tag}}" class="content-section">
         <div class="section-header">
@@ -47,7 +47,7 @@
         </div>
 
         <!-- Audio Player Component -->
-        <div class="audio-player" data-audio-id="audio-intro">
+        <div class="audio-player" data-audio-id="{{'audio'.$detail->id}}">
             <button class="play-btn"><i class="fas fa-play"></i></button>
             <div class="audio-info">
                 <div class="progress-bar">
