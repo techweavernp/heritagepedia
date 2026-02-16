@@ -37,7 +37,6 @@
 
 <!-- Main Content -->
 <main class="content-container">
-
     <!-- Main Section -->
     @foreach($heritage->heritage_details as $detail)
     <section id="{{$detail->qlink_tag}}" class="content-section">
@@ -60,7 +59,6 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
-
         <p class="text-content">{!! $detail->description !!}</p>
     </section>
     @endforeach
@@ -69,46 +67,17 @@
     <section id="gallery" class="content-section">
         <div class="section-header">
             <div class="red-bar"></div>
-            <h2>@switch($heritage->lang->code)
-                    @case('np')
-                        फोटो
-                        @break
-                    @case('en')
-                        Gallery
-                        @break
-                    @case('in')
-                        गैलरी
-                        @break
-                    @default
-                        Gallery
-                @endswitch</h2>
+            <h2>{{ \App\Services\LabelService::gallery($heritage->lang->code ?? null) }}</h2>
         </div>
 
         <div class="gallery-grid">
-            <!-- Gallery Item 1 -->
-            <div class="gallery-item"
-                 data-desc="The iconic Golden Gate (Lu Dhowka), the entrance to the main courtyard of the Palace of 55 Windows.">
-                <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                     alt="Golden Gate">
-            </div>
-            <!-- Gallery Item 2 -->
-            <div class="gallery-item"
-                 data-desc="Nyatapola Temple, the tallest pagoda in Nepal, demonstrating traditional Newari architecture.">
-                <img src="https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                     alt="Nyatapola Temple">
-            </div>
-            <!-- Gallery Item 3 -->
-            <div class="gallery-item"
-                 data-desc="Traditional wood carvings visible on the struts of the temples around the square.">
-                <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                     alt="Wood Carvings">
-            </div>
-            <!-- Gallery Item 4 -->
-            <div class="gallery-item"
-                 data-desc="Pottery Square, where traditional potters impress their clay wares in the sun.">
-                <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                     alt="Pottery Square">
-            </div>
+            <!-- Gallery Item -->
+            @foreach($galleries as $gallery)
+                <div class="gallery-item"
+                     data-desc="{!! $gallery->caption !!}">
+                    <img src="{{asset('storage/' . $gallery->image)}}" alt="Heritage Pedia">
+                </div>
+            @endforeach
         </div>
     </section>
 
@@ -122,11 +91,11 @@
         <div class="sources-grid">
             <div class="source-item">
                 <div class="source-info">
-                    <span class="source-role">Researcher -</span>
+                    <span class="source-role">{{ \App\Services\LabelService::researcher($heritage->lang->code ?? null) }} -</span>
                     <span class="source-name">{{$heritage->source['researcher']}}</span>
                     <span class="source-detail">{{$heritage->source['title']}}</span>
                     <br>
-                    <span class="source-role">Photographer -</span>
+                    <span class="source-role">{{ \App\Services\LabelService::photographer($heritage->lang->code ?? null) }} -</span>
                     <span class="source-name">{{$heritage->source['photographer']}}</span>
                 </div>
             </div>
