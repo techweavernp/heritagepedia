@@ -30,6 +30,7 @@ class FrontPageController extends Controller
         $languages = Heritage::getLanguagesBySite($url_code);
 
         $heritage = Heritage::with(['heritage_details', 'lang'])
+            ->published()
             ->whereUrlCode($url_code)->first();
 
         $galleries = Gallery::whereSiteId($heritage->site_id)->get();

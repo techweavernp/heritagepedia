@@ -13,7 +13,9 @@ class ListLangs extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->modalWidth('sm'),
+            CreateAction::make()
+                ->modalWidth('sm')
+                ->createAnother(false),
         ];
     }
 }

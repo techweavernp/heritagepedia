@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -34,12 +36,19 @@ class Heritage extends Model
         return $this->hasMany(HeritageDetail::class);
     }
 
+    #[Scope]
+    protected function published(Builder $query): void
+    {
+        $query->wherePublish(true);
+    }
+
     public static function getLanguagesBySite(string $url_code): \Illuminate\Support\Collection
     {
         $site_id = self::whereUrlCode($url_code)->firstOrFail()->site_id;
 
         return self::with('lang')
             ->where('site_id', $site_id)
+            ->wherePublish(true)
             ->get()
             ->pluck('lang')
             ->unique('id')
