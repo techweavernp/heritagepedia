@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Gallery;
 use App\Models\Heritage;
 
 class FrontPageController extends Controller
@@ -28,12 +29,12 @@ class FrontPageController extends Controller
 
         $languages = Heritage::getLanguagesBySite($url_code);
 
-        $heritage = Heritage::with(['heritage_details', 'lang', 'galleries'])
+        $heritage = Heritage::with(['heritage_details', 'lang'])
             ->whereUrlCode($url_code)->first();
 
-        //return $heritage;
+        $galleries = Gallery::whereSiteId($heritage->site_id)->get();
 
-        return view('pages.page', compact(['heritage', 'languages']));
+        return view('pages.page', compact(['heritage', 'languages', 'galleries']));
     }
 }
 

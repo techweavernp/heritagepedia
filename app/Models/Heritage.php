@@ -34,11 +34,6 @@ class Heritage extends Model
         return $this->hasMany(HeritageDetail::class);
     }
 
-    public function galleries(): HasMany
-    {
-        return $this->hasMany(Gallery::class);
-    }
-
     public static function getLanguagesBySite(string $url_code): \Illuminate\Support\Collection
     {
         $site_id = self::whereUrlCode($url_code)->firstOrFail()->site_id;

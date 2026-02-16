@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Heritages;
 use App\Filament\Resources\Heritages\Pages\CreateHeritage;
 use App\Filament\Resources\Heritages\Pages\EditHeritage;
 use App\Filament\Resources\Heritages\Pages\ListHeritages;
-use App\Filament\Resources\Heritages\RelationManagers\GalleriesRelationManager;
 use App\Filament\Resources\Heritages\RelationManagers\HeritageDetailsRelationManager;
 use App\Filament\Resources\Heritages\Schemas\HeritageForm;
 use App\Filament\Resources\Heritages\Tables\HeritagesTable;
@@ -38,8 +37,7 @@ class HeritageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            HeritageDetailsRelationManager::class,
-            GalleriesRelationManager::class
+            HeritageDetailsRelationManager::class
         ];
     }
 

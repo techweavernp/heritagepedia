@@ -5,12 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Manohar\Address\Models\City;
 
 class Site extends Model
 {
     protected $guarded = ['id'];
     protected $appends = ['location'];
+
+    public function galleries(): HasMany
+    {
+        return $this->hasMany(Gallery::class);
+    }
 
     public function category(): BelongsTo
     {

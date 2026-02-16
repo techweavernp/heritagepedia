@@ -2,14 +2,13 @@
 
 namespace App\Filament\Resources\Heritages\Schemas;
 
-use App\Filament\Resources\Heritages\RelationManagers\HeritageDetailsRelationManager;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\ToggleButtons;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 
 class HeritageForm
@@ -32,7 +31,7 @@ class HeritageForm
                         TextInput::make('location')
                             ->required(),
                         FileUpload::make('feature_image')
-                            ->directory(fn (HeritageDetailsRelationManager $livewire) => 'heritage/' . $livewire->getOwnerRecord()->site_id)
+                            ->directory(fn (Get $get) => 'heritage/' . $get('site_id'))
                             ->image()
                             ->required()
                             ->columnSpan(2),
