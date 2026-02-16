@@ -40,8 +40,7 @@ class HeritageDetailsRelationManager extends RelationManager
                             ->required()
                             ->columnSpanFull(),
                         FileUpload::make('audio')
-                            ->directory('audio')
-                            ->required(),
+                            ->directory('audio'),
                     ])->columns(2)
             ]);
     }
