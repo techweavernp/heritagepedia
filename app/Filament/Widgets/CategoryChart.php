@@ -29,7 +29,13 @@ class CategoryChart extends ChartWidget
                 [
                     'label' => 'Sites',
                     'data' => array_values($data),
-                    'borderColor' => '#9BD0F5',
+                    'backgroundColor' => [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                    ],
+                    'hoverOffset' => 4,
+                    //'borderColor' => '#9BD0F5',
                 ],
             ],
             'labels' => array_keys($data),
@@ -38,6 +44,6 @@ class CategoryChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'bar';
+        return 'doughnut';
     }
 }
