@@ -56,7 +56,6 @@ class GalleriesRelationManager extends RelationManager
             ->recordActions([
                 EditAction::make()
                     ->modalWidth('lg'),
-                DeleteAction::make(),
             ])
             ;
     }

@@ -52,8 +52,8 @@ class HeritageDetailsRelationManager extends RelationManager
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('audio')
-                    ->searchable(),
+                TextColumn::make('audio'),
+                TextColumn::make('qlink_tag'),
             ])
             ->filters([
                 //
@@ -63,7 +63,6 @@ class HeritageDetailsRelationManager extends RelationManager
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
             ])
             ;
     }
