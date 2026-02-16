@@ -47,7 +47,7 @@
         </div>
 
         <!-- Audio Player Component -->
-        <div class="audio-player" data-audio-id="{{'audio'.$detail->id}}">
+        <div class="audio-player" data-audio-id="audio-intro">
             <button class="play-btn"><i class="fas fa-play"></i></button>
             <div class="audio-info">
                 <div class="progress-bar">
