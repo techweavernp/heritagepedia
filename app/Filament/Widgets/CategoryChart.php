@@ -24,21 +24,31 @@ class CategoryChart extends ChartWidget
             ->pluck('count', 'categories.name')
             ->toArray();
 
+        $colorMap = [
+            'Temple' => '#5B2727',    // Deep brown/maroon
+            'Mahabir' => '#EEA429',   // Golden/amber
+            'Bahah' => '#0284c7',     // Sky blue
+            'Bahi' => '#003893',      // Deep blue
+        ];
+
+        $labels = array_keys($data);
+
+        // Map colors based on label names (fallback to gray if not found)
+        $backgroundColors = array_map(
+            fn($label) => $colorMap[$label] ?? '#6B7280',
+            $labels
+        );
+
         return [
             'datasets' => [
                 [
                     'label' => 'Sites',
                     'data' => array_values($data),
-                    'backgroundColor' => [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)'
-                    ],
+                    'backgroundColor' => $backgroundColors,
                     'hoverOffset' => 4,
-                    //'borderColor' => '#9BD0F5',
                 ],
             ],
-            'labels' => array_keys($data),
+            'labels' => $labels,
         ];
     }
 
