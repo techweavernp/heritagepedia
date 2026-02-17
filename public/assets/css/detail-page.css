@@ -941,6 +941,10 @@ ul{
 
 a:-webkit-any-link {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: underline !important;
+}
+
+table, tr, th, td {
+    border: 1px solid green;
 }
 
