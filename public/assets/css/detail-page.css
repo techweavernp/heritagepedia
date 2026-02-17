@@ -939,3 +939,8 @@ ul{
     unicode-bidi: isolate;
 }
 
+a:-webkit-any-link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
