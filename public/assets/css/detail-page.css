@@ -945,6 +945,6 @@ a:-webkit-any-link {
 }
 
 table, tr, th, td {
-    border: 1px solid green;
+    border: 1px solid;
 }
 
