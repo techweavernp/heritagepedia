@@ -41,8 +41,9 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: inherit;
+    cursor: pointer;
 }
 
 /* Header */
@@ -926,22 +927,13 @@ a {
     font-family: var(--font-body), serif;
 }
 
-ol{
-    padding-inline-start: 30px
-}
-
-ul{
+ul, ul{
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
     margin-block-end: 1em;
     padding-inline-start: 30px;
     unicode-bidi: isolate;
-}
-
-a:-webkit-any-link {
-    cursor: pointer;
-    text-decoration: underline !important;
 }
 
 table, tr, th, td {
