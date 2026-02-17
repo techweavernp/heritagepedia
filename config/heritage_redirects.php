@@ -76,7 +76,7 @@ return [
     'bkt-4-chhinnamasta-temple-np'      => 'chn4chhinnamastatemplenp',
     'bkt-4-garud-narayan-icon'          => 'chn4garudnarayaniconen',
     'bkt-4-garud-narayan-icon-np'       => 'chn4garudnarayaniconnp',
-    'bkt-4-historical-column-of-mandev' => 'chn4historicalcolumnofmandeven',
+    'bkt-4-historical-column-of-mandev' => 'chn4historicalcolumnmandeven',
     'bkt-4-historical-column-mandev-np' => 'chn4historicalcolumnmandevnp',
 
     /* Lubhu Mahalaxmi Nagarpalika - 6,7,8 ward */

@@ -927,5 +927,15 @@ a {
 }
 
 ol{
-    padding-inline-start: 12px
+    padding-inline-start: 30px
 }
+
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 30px;
+    unicode-bidi: isolate;
+}
+

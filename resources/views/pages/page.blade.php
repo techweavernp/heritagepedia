@@ -46,19 +46,22 @@
         </div>
 
         <!-- Audio Player Component -->
-        <div class="audio-player" data-audio-id="{{'audio-'.$detail->id}}">
-            <button class="play-btn"><i class="fas fa-play"></i></button>
-            <div class="audio-info">
-                <div class="progress-bar">
-                    <div class="progress" style="width: 0%;"></div>
+        @if($detail->audio)
+            <div class="audio-player" data-audio-id="{{'audio-'.$detail->id}}">
+                <button class="play-btn"><i class="fas fa-play"></i></button>
+                <div class="audio-info">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%;"></div>
+                    </div>
                 </div>
+                <span class="audio-time">0:00 / 0:00</span>
+                <audio id="{{'audio-'.$detail->id}}" preload="metadata">
+                    <source src="{{asset('storage/' . $detail->audio)}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
-            <span class="audio-time">0:00 / 0:00</span>
-            <audio id="{{'audio-'.$detail->id}}" preload="metadata">
-                <source src="{{asset('storage/' . $detail->audio)}}" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+        @endif
+
         <p class="text-content">{!! $detail->description !!}</p>
     </section>
     @endforeach
@@ -87,7 +90,6 @@
             <div class="red-bar"></div>
             <h2>Exploring</h2>
         </div>
-
         <div class="sources-grid">
             <div class="source-item">
                 <div class="source-info">
