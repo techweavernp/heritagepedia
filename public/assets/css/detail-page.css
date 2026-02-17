@@ -927,7 +927,7 @@ a {
     font-family: var(--font-body), serif;
 }
 
-ul, ul{
+ul, ol{
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
