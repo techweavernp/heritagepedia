@@ -37,6 +37,13 @@ class HeritageForm
 //                            ->required()
 //                            ->columnSpan(2),
                         KeyValue::make('source')
+                            ->default([
+                                'title' => '',
+                                'researcher' => '',
+                                'photographer' => '',
+                            ])
+                            ->keyLabel('Property')
+                            ->valueLabel('Value')
                             ->columnSpan(2),
                         TextInput::make('url_code')
                             ->required(),
