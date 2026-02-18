@@ -47,6 +47,7 @@ class HeritageDetailsRelationManager extends RelationManager
                 TextColumn::make('audio'),
                 TextColumn::make('qlink_tag'),
             ])
+            ->paginated(false)
             ->filters([
                 //
             ])

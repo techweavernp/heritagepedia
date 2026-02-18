@@ -42,6 +42,7 @@ class GalleriesRelationManager extends RelationManager
                 ImageColumn::make('image'),
                 TextColumn::make('caption'),
             ])
+            ->paginated(false)
             ->filters([
                 //
             ])
