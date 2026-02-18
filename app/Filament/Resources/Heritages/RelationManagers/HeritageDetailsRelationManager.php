@@ -46,7 +46,8 @@ class HeritageDetailsRelationManager extends RelationManager
                     ->rowIndex(),
                 TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('audio'),
+                TextColumn::make('audio')
+                    ->placeholder('NONE'),
                 TextColumn::make('qlink_tag'),
             ])
             ->paginated(false)
