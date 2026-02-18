@@ -38,7 +38,8 @@ class GalleriesRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('id')
             ->columns([
-                TextColumn::make('id'),
+                TextColumn::make('sno')
+                    ->rowIndex(),
                 ImageColumn::make('image'),
                 TextColumn::make('caption'),
             ])
