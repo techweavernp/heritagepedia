@@ -19,12 +19,14 @@ class HeritagesTable
     {
         return $table
             ->columns([
+                ImageColumn::make('site.image')
+                    ->label('Cover Image'),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('lang.name')
                     ->label('Language')
                     ->sortable(),
-                ImageColumn::make('feature_image'),
+                //ImageColumn::make('feature_image'),
                 TextColumn::make('location')
                     ->searchable(),
                 TextColumn::make('url_code')
