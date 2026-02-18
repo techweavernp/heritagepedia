@@ -40,7 +40,8 @@ class GalleriesRelationManager extends RelationManager
             ->columns([
                 TextColumn::make('sno')
                     ->rowIndex(),
-                ImageColumn::make('image'),
+                ImageColumn::make('image')
+                    ->placeholder('NONE'),
                 TextColumn::make('caption'),
             ])
             ->paginated(false)
