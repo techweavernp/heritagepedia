@@ -36,6 +36,7 @@ class SiteForm
                     FileUpload::make('image')
                         ->label('Cover Image')
                         ->directory('site')
+                        ->preserveFilenames()
                         ->image()
                         ->columnSpanFull(),
                     TextInput::make('notes')

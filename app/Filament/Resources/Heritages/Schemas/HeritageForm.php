@@ -33,6 +33,7 @@ class HeritageForm
 //                        FileUpload::make('feature_image')
 //                            ->directory(fn (Get $get) => 'heritage/' . $get('site_id'))
 //                            ->image()
+//                            ->preserveFilenames()
 //                            ->required()
 //                            ->columnSpan(2),
                         KeyValue::make('source')
