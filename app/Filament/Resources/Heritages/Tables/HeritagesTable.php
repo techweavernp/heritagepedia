@@ -19,6 +19,7 @@ class HeritagesTable
     {
         return $table
             ->columns([
+                TextColumn::make('id'),
                 ImageColumn::make('site.image')
                     ->label('Cover Image'),
                 TextColumn::make('name')

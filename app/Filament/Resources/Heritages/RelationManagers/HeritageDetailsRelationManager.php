@@ -42,6 +42,8 @@ class HeritageDetailsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('title')
             ->columns([
+                TextColumn::make('Sno')
+                    ->rowIndex(),
                 TextColumn::make('title')
                     ->searchable(),
                 TextColumn::make('audio'),
