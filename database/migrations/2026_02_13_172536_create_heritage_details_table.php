@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('heritage_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->text('description');
-            $table->string('audio');
-            $table->string('qlink_tag');
+            $table->string('audio')->nullable();
+            $table->string('qlink_tag')->nullable();
             $table->timestamps();
         });
     }

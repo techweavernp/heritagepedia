@@ -24,7 +24,7 @@
 <section class="hero-section">
     <div class="hero-bg">
         <!-- Placeholder for the main detailed image -->
-        <img src="{{ asset('storage/' . $heritage->feature_image) }}" alt="Heritage Pedia Info">
+        <img src="{{ asset('storage/' . $heritage->site->image) }}" alt="Heritage Pedia Info">
         <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">

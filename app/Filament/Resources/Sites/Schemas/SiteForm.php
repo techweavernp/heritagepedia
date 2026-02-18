@@ -34,6 +34,7 @@ class SiteForm
                             TextInput::make('street'),
                         ])->columns(3),
                     FileUpload::make('image')
+                        ->label('Cover Image')
                         ->directory('site')
                         ->image()
                         ->columnSpanFull(),

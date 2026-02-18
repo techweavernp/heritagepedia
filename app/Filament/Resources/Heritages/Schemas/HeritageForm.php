@@ -30,11 +30,11 @@ class HeritageForm
                             ->required(),
                         TextInput::make('location')
                             ->required(),
-                        FileUpload::make('feature_image')
-                            ->directory(fn (Get $get) => 'heritage/' . $get('site_id'))
-                            ->image()
-                            ->required()
-                            ->columnSpan(2),
+//                        FileUpload::make('feature_image')
+//                            ->directory(fn (Get $get) => 'heritage/' . $get('site_id'))
+//                            ->image()
+//                            ->required()
+//                            ->columnSpan(2),
                         KeyValue::make('source')
                             ->columnSpan(2),
                         TextInput::make('url_code')

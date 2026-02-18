@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('site_id')->constrained()->cascadeOnDelete();
             $table->string('image');
             $table->string('caption')->nullable();
+            $table->boolean('cover_image')->default(false);
         });
     }
 
