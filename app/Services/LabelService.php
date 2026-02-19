@@ -41,4 +41,12 @@ class LabelService
             default => 'Photographer',
         };
     }
+
+    public static function coordinator(?string $langCode): string
+    {
+        return match ($langCode) {
+            'np', 'nw', 'in' => 'समन्वय',
+            default => 'Coordinator',
+        };
+    }
 }
