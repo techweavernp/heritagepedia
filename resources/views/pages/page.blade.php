@@ -100,11 +100,11 @@
                     <br>
                     <span class="source-role">{{ \App\Services\LabelService::photographer($heritage->lang->code ?? null) }} -</span>
                     <span class="source-name">{{$heritage->source['photographer']}}</span>
-                    @if($heritage->source['coordinator'])
+                    {{--@if($heritage->source['coordinator'])
                     <br>
                     <span class="source-role">{{ \App\Services\LabelService::coordinator($heritage->lang->code ?? null) }} -</span>
                     <span class="source-name">{{$heritage->source['coordinator']}}</span>
-                    @endif
+                    @endif--}}
                 </div>
             </div>
         </div>
