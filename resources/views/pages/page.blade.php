@@ -85,6 +85,7 @@
     </section>
 
     <!-- Sources Section -->
+    @if($heritage->source['researcher'] || $heritage->source['photographer'])
     <section id="sources" class="content-section sources-section">
         <div class="section-header">
             <div class="red-bar"></div>
@@ -103,6 +104,7 @@
             </div>
         </div>
     </section>
+    @endif
 </main>
 
 <!-- Required Bottom Navigation Bar -->
