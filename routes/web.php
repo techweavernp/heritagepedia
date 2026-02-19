@@ -15,5 +15,5 @@ Route::get('/auth/{provider}/callback', [SocialiteController::class, 'callback']
 
 
 Route::get('/about', [FrontPageController::class, 'about']);
-Route::get('/page/{url_code}', [FrontPageController::class, 'page']);
-Route::get('/{url_code}', [FrontPageController::class, 'index']);
+Route::get('/page/{url_code}', [FrontPageController::class, 'page'])->middleware('mobile.only');
+Route::get('/{url_code}', [FrontPageController::class, 'index'])->middleware('mobile.only');
