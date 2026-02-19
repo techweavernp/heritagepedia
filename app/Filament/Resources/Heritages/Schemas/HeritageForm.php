@@ -21,14 +21,25 @@ class HeritageForm
                     ->columnSpanFull()
                     ->schema([
                         Select::make('site_id')
+                            ->searchable()
+                            ->preload()
+                            ->placeholder('Select site')
                             ->relationship('site', 'name')
-                            ->required(),
+                            ->required()
+                            ->allowHtml()
+                            ->getOptionLabelFromRecordUsing(fn ($record) =>
+                                "{$record->name}<em class='text-gray-500 text-sm'> ({$record->street})</em>"
+                            ),
                         Select::make('lang_id')
                             ->relationship('lang', 'name')
                             ->required(),
                         TextInput::make('name')
                             ->required(),
                         TextInput::make('location')
+                            ->required(),
+                        TextInput::make('url_code')
+                            ->required(),
+                        Toggle::make('publish')
                             ->required(),
 //                        FileUpload::make('feature_image')
 //                            ->directory(fn (Get $get) => 'heritage/' . $get('site_id'))
@@ -45,11 +56,8 @@ class HeritageForm
                             ->keyLabel('Property')
                             ->valueLabel('Value')
                             ->columnSpan(2),
-                        TextInput::make('url_code')
-                            ->required(),
-                        Toggle::make('publish')
-                            ->required(),
-                    ])->columns(4)
+
+                    ])->columns(3)
             ]);
     }
 }
