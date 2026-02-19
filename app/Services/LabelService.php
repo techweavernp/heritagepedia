@@ -45,7 +45,7 @@ class LabelService
     public static function coordinator(?string $langCode): string
     {
         return match ($langCode) {
-            'np', 'nw', 'in' => 'समन्वय',
+            'np', 'nb', 'in' => 'समन्वय',
             default => 'Coordinator',
         };
     }
