@@ -623,7 +623,7 @@ a {
     overflow-y: auto;
     animation: slideUp 0.3s ease-out;
     border-top: 1px solid var(--accent-red);
-    padding-bottom: 80px;
+    padding-bottom: 20px;
     /* Space for bottom nav */
 }
 

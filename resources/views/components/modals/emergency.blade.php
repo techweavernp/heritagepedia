@@ -23,9 +23,11 @@
             <div class="emergency-section">
                 <h4>Tourist Police Head Office</h4>
                 <p class="location-detail">Bhrikutimandap, Kathmandu (Nepal Tourism Board)</p>
-                <ul class="contact-list">
-                    <li><i class="fas fa-phone"></i> <a href="tel:014247041">01-4247041</a></li>
-                    <li><i class="fas fa-mobile-alt"></i> <a href="tel:9851289444">9851289444</a></li>
+                <ul class="emergency-list">
+                    <li><span class="service-name">Landline</span> <a href="tel:014247041"
+                                                                            class="service-number">01-4247041</a></li>
+                    <li><span class="service-name">Mobile</span> <a href="tel:9851289444"
+                                                                      class="service-number">9851289444</a></li>
                     <li><i class="fas fa-envelope"></i> <a
                             href="mailto:policetourist@nepalpolice.gov.np">policetourist@nepalpolice.gov.np</a></li>
                 </ul>
@@ -69,11 +71,16 @@
                 <p class="location-detail">Kalikasthan, Kathmandu</p>
                 <ul class="contact-list">
                     <li><i class="fas fa-phone"></i> <a href="tel:014529659">01-4529659</a>, <a
-                            href="tel:014429660">01-4429660</a>, <a href="tel:014433935">01-4433935</a>, <a
+                            href="tel:014429660">01-4429660</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:014433935">01-4433935</a>, <a
                             href="tel:014433934">01-4433934</a></li>
                     <li><i class="fas fa-envelope"></i> <a
                             href="mailto:info@immigration.gov.np">info@immigration.gov.np</a></li>
                 </ul>
+            </div>
+            <div class="emergency-section">
+                <h4></h4>
+                <p class="location-detail" style="text-align:center">Developer: <a href="https://www.techweaver.com.np" target="_blank">Tech Weaver Pvt. Ltd</a></p>
             </div>
         </div>
     </div>

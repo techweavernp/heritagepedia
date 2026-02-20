@@ -8,7 +8,7 @@ class LabelService
     {
         return match ($langCode) {
             'np' => 'फोटो',
-            'nw' => 'किपा',
+            'nb' => 'किपा',
             'in' => 'गैलरी',
             'cn' => '画廊',
             'jp' => 'ギャラリー',
@@ -21,7 +21,7 @@ class LabelService
     public static function researcher(?string $langCode): string
     {
         return match ($langCode) {
-            'np', 'nw', 'in' => 'अनुसन्धानकर्ता',
+            'np', 'nb', 'in' => 'अनुसन्धानकर्ता',
             'cn' => '研究员',
             'jp' => '研究員',
             'es' => 'Investigadora',
@@ -33,7 +33,7 @@ class LabelService
     public static function photographer(?string $langCode): string
     {
         return match ($langCode) {
-            'np', 'nw', 'in' => 'फोटोग्राफर',
+            'np', 'nb', 'in' => 'फोटोग्राफर',
             'cn' => '摄影师',
             'jp' => 'フォトグラファー',
             'es' => 'fotógrafo',
@@ -45,7 +45,7 @@ class LabelService
     public static function coordinator(?string $langCode): string
     {
         return match ($langCode) {
-            'np', 'nb', 'in' => 'समन्वय',
+            'np', 'nb' => 'समन्वय',
             default => 'Coordinator',
         };
     }
