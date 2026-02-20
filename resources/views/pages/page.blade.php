@@ -85,26 +85,39 @@
     </section>
 
     <!-- Sources Section -->
-    @if($heritage->source['researcher'] || $heritage->source['photographer'])
+    @php
+        $source = $heritage->source ?? [];
+    @endphp
+    @if(!empty($source['researcher']) || !empty($source['photographer']))
     <section id="sources" class="content-section sources-section">
         <div class="section-header">
             <div class="red-bar"></div>
-            <h2>Exploring</h2>
+            <h2>Chroniclers</h2>
         </div>
         <div class="sources-grid">
             <div class="source-item">
                 <div class="source-info">
-                    <span class="source-role">{{ \App\Services\LabelService::researcher($heritage->lang->code ?? null) }} -</span>
-                    <span class="source-name">{{$heritage->source['researcher']}}</span>
-                    <span class="source-detail">{{$heritage->source['title']}}</span>
-                    <br>
-                    <span class="source-role">{{ \App\Services\LabelService::photographer($heritage->lang->code ?? null) }} -</span>
-                    <span class="source-name">{{$heritage->source['photographer']}}</span>
-                    {{--@if($heritage->source['coordinator'])
-                    <br>
-                    <span class="source-role">{{ \App\Services\LabelService::coordinator($heritage->lang->code ?? null) }} -</span>
-                    <span class="source-name">{{$heritage->source['coordinator']}}</span>
-                    @endif--}}
+                    @if(!empty($source['researcher']))
+                        <div class="source-row">
+                            <span class="source-role">{{ \App\Services\LabelService::researcher($heritage->lang->code ?? null) }} -</span>
+                            <span class="source-name">{{ $source['researcher'] }}</span>
+                            @if(!empty($source['title']))
+                                <span class="source-detail">{{ $source['title'] }}</span>
+                            @endif
+                        </div>
+                    @endif
+                    @if(!empty($source['photographer']))
+                        <div class="source-row">
+                            <span class="source-role">{{ \App\Services\LabelService::photographer($heritage->lang->code ?? null) }} -</span>
+                            <span class="source-name">{{ $source['photographer'] }}</span>
+                        </div>
+                    @endif
+                    @if(!empty($source['coordinator']))
+                        <div class="source-row">
+                            <span class="source-role">{{ \App\Services\LabelService::coordinator($heritage->lang->code ?? null) }} -</span>
+                            <span class="source-name">{{ $source['coordinator'] }}</span>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
